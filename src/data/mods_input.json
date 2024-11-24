@@ -1,0 +1,22 @@
+{
+	"mods": [
+		{
+			"modName": "Appleskin",
+			"projectId": "248787"
+		},
+		{
+			"modName": "Balm",
+			"projectId": "531761"
+		},
+		{
+			"modName": "Better Advancements",
+			"projectId": "272515"
+		},
+		{
+			"modName": "Just Enough Items (JEI)",
+			"projectId": "238222"
+		}
+	],
+	"gameFlavorId": 6,
+	"gameVersionId": 11457
+}

@@ -1,14 +1,10 @@
-from curl_cffi import requests as c_requests
-import requests
 import json
 import os
+import requests
 from rich import print
 import semver
+from .sessions import new_session
 import subprocess
-
-def new_session():
-	session = c_requests.Session(impersonate="chrome", proxy=os.getenv("stickyproxy"))
-	return session
 
 def get_current_nf_version(minecraft_path: str) -> str:
 	if os.path.exists(minecraft_path):
@@ -53,7 +49,7 @@ def upgrade_neoforge(version: str) -> None:
 	else:
 		print(f"Failed to download NeoForge installer: {response.status_code}")
 
-def autoupdate_neoforge(minecraft_path: str):
+def autoupdate_neoforge(minecraft_path: str) -> None:
 
 	# Instaling NeoForge
 	main_version = 21
@@ -65,12 +61,9 @@ def autoupdate_neoforge(minecraft_path: str):
 	print(f"{"Installed NeoForge version:":<30}{installed_nf_version:>10}")
 	print(f"{"Latest NeoForge version:":<30}{latest_nf_version:>10}")
 	result = semver.compare(installed_nf_version, latest_nf_version)
-	if result == 0:
+	if result >= 0:
 		print("Not upgrading Neoforge...")
-		exit()
-	elif result == 1:
-		print("installed version is newer than latest release???")
-		exit()
+		return
 	else:
 		print("installed version out of date...")
 

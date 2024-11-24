@@ -1,0 +1,2 @@
+[console_scripts]
+autoupdate_minecraft = mc_autoupdater.auto_update:main
