@@ -1,0 +1,26 @@
+[project]
+name = "minecraft-autoupdater"
+version = "0.1.0"
+description = "Used for updating neoforge & curseforge mods"
+authors = [{ name = "Dylan Cullinane", email = "dylanjcullinane@icloud.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "curl-cffi>=0.7.3",
+    "requests>=2.32.3",
+    "rich>=13.9.4",
+    "semver>=3.0.2",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+mc-autoupdater = "minecraft_autoupdater.cli:main"
+
+[tool.uv]
+package = true
+dev-dependencies = [
+	"ruff>=0.7.0"
+]

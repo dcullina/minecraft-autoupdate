@@ -9,7 +9,7 @@
 			"projectId": "531761"
 		},
 		{
-			"modName": "Better Advancements",
+			"modName": "better-advancements",
 			"projectId": "272515"
 		},
 		{
@@ -17,6 +17,8 @@
 			"projectId": "238222"
 		}
 	],
-	"gameFlavorId": 6,
-	"gameVersionId": 11457
+	"curseForgeDetails": {
+		"gameFlavorId": 6,
+		"gameVersionId": 11457
+	}
 }
